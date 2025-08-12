@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { env } from "process";
 import { z } from "zod";
+import { env } from "~/env";
 import { UnauthorizedError, ZodValidationError } from "~/lib/http";
 import { sign } from "~/lib/jwt";
 

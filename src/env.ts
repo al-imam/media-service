@@ -27,7 +27,7 @@ const envSchema = z
     QUEUE_CONCURRENCY: z.coerce.number().int().min(1).max(64).default(4),
 
     SECRET_KEY: z.string().default("dev-secret"),
-    JWT_SECRET: z.string().default("dev-secret"),
+    JWT_SECRET: z.string().default("dev-jwt-secret"),
 
     PORT: PortSchema.default(8000),
   })
