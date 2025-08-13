@@ -1,1 +1,3 @@
-![Access Flow Whiteboard](server/public/access-flow.png)
+# Public Media Service
+
+![Flow Whiteboard](public/mermaid.png)

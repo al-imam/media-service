@@ -22,10 +22,10 @@ POST {{host}}/m
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="access-flow.png"
+Content-Disposition: form-data; name="file"; filename="mermaid.png"
 Content-Type: image/png
 
-< ../public/access-flow.png
+< ../public/mermaid.png
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 
