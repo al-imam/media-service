@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: media-service-redis
+    ports:
+      - "6380:6379"
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    volumes:
+      - media-service-redis:/storage
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD} --appendonly yes --maxmemory 256mb
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  media-service-redis:
+    driver: local

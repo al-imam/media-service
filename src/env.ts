@@ -22,9 +22,9 @@ const envSchema = z
     MAX_UPLOAD_SIZE_MB: z.coerce.number().int().min(1).max(100).default(20),
     MAX_IMAGE_DIMENSION: z.coerce.number().int().min(1).max(10000).default(6000),
     MAX_PIXEL_COUNT: z.coerce.number().int().min(1).default(36000000),
-
-    REDIS_URL: z.string().url().default("redis://127.0.0.1:6379"),
     QUEUE_CONCURRENCY: z.coerce.number().int().min(1).max(64).default(4),
+
+    REDIS_URL: z.url().default("redis://127.0.0.1:6380"),
 
     SECRET_KEY: z.string().default("dev-secret"),
     JWT_SECRET: z.string().default("dev-jwt-secret"),

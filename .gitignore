@@ -133,7 +133,6 @@ dist
 
 # ignore package manager
 .pnpm
-pnpm-lock.yaml
 package-lock.json
 yarn.lock
 

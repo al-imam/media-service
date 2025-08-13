@@ -19,6 +19,10 @@ export type IngestJobResult = { key: string };
 const redis = new IORedis(env.REDIS_URL, {
   maxRetriesPerRequest: null,
 });
+
+// prettier-ignore
+redis.on("error", error => { throw error; });
+
 export const ingestQueue = new Queue<IngestJobData>("image-ingest", { connection: redis });
 const ingestEvents = new QueueEvents("image-ingest", { connection: redis });
 
