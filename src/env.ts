@@ -28,6 +28,7 @@ const envSchema = z
 
     SECRET_KEY: z.string().default("dev-secret"),
     JWT_SECRET: z.string().default("dev-jwt-secret"),
+    VALIDATION_URI: z.url().optional(),
 
     PORT: PortSchema.default(8000),
   })
