@@ -17,7 +17,6 @@ const envSchema = z
     ROOT: z.string().default(() => ROOT),
 
     STORAGE_DIRECTORY: z.string().default(() => normalize(join(ROOT, "secure-storage"))),
-    TMP_DIRECTORY: z.string().default(() => normalize(join(ROOT, "secure-storage", "___tmp___"))),
 
     MAX_UPLOAD_SIZE_MB: z.coerce.number().int().min(1).max(100).default(20),
     MAX_IMAGE_DIMENSION: z.coerce.number().int().min(1).max(10000).default(6000),
@@ -35,6 +34,7 @@ const envSchema = z
   .transform(env => ({
     ...env,
     IS_DEV: env.NODE_ENV === "development",
+    TMP_DIRECTORY: normalize(join(env.STORAGE_DIRECTORY, "___tmp___")),
   }));
 
 export const env = envSchema.parse(process.env);
