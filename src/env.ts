@@ -1,10 +1,9 @@
 import "dotenv/config";
 
 import { join, normalize } from "path";
-import { fileURLToPath } from "url";
 import { z } from "zod";
 
-const ROOT = normalize(join(fileURLToPath(import.meta.url), "..", ".."));
+const ROOT = normalize(join(__dirname, ".."));
 
 const PortSchema = z
   .string()
